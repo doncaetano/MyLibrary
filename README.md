@@ -7,7 +7,7 @@ My compilation of algorithms to solve machine learning problems
 [![Generic badge](https://img.shields.io/badge/tensorflow-v1.12.0-orange.svg)](https://shields.io/)
 
 ## Available Algorithms
-- [RBM](RBM/)
+- [RBM](RBM/) - Restricted Boltzmann Machine
 
 ## License
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/rhuancaetano/MyLibrary/blob/master/LICENSE)
