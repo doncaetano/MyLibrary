@@ -30,7 +30,7 @@ class RBM:
             print('select a valid RBM type!')
             raise Exception('RBM Type Error!!!')
     
-    def train( self, maxIter=200, lr=0.001, wc=0.0002, iMom=0.5, fMom=0.9, cdIter=1, batchSize=100, verbose=True):
+    def train( self, maxIter=50, lr=0.1, wc=0.0002, iMom=0.5, fMom=0.9, cdIter=1, batchSize=100, verbose=True):
 
         # verifying the validity of the batch size parameter
         # if it's 0, the whole dataset will be used
