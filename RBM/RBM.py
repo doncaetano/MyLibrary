@@ -22,7 +22,6 @@ class RBM:
         self.trainingData = trainingData 
         self.nSamples, self.nVisible = trainingData.shape
         self.nHidden = nHidden
-
         # setting the RBM type
         if (rbmType == 'GBRBM') or (rbmType == 'BBRBM'): 
             self.rbmType = rbmType
@@ -97,7 +96,7 @@ class RBM:
         attHidBias = hidBias.assign_add(attDeltaHidBias)
 
         ############################
-        
+
         with tf.Session() as sess:
             sess.run( tf.global_variables_initializer())
 
@@ -144,7 +143,7 @@ class RBM:
             self.hidBias = sess.run(hidBias)
         
     def rmse ( self, x, y):
-	    return np.sum( np.sqrt( np.sum( np.power(x-y,2),axis=1)/x.shape[1]))/x.shape[0]
+        return np.sum( np.sqrt( np.sum( np.power(x-y,2),axis=1)/x.shape[1]))/x.shape[0]
 
     def getReconstruction ( self, data):
         vis = tf.convert_to_tensor( data, dtype=tf.float32, name='visRecs')
@@ -165,7 +164,8 @@ class RBM:
         np.savetxt( fileName+'VisBias.csv', self.visBias)
         np.savetxt( fileName+'HidBias.csv', self.hidBias)   
         
-
+    def getWeights(self):
+        return self.weights, self.visBias, self.hidBias
     
 
 
